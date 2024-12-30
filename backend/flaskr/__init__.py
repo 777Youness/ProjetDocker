@@ -22,6 +22,8 @@ def create_app(test_config=None):
     cors.init_app(app)
     jwt.init_app(app)
 
+    
+
     api.register_blueprint(task_route, url_prefix="/api/v1")
 
     return app

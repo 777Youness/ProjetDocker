@@ -25,3 +25,9 @@ class DevelopmentConfig(Config):
 
 class TestConfig(Config):
     pass
+
+class TestConfig(Config):
+    SQLALCHEMY_DATABASE_URI = "sqlite:///:memory:"
+
+class DockerConfig(Config):
+    SQLALCHEMY_DATABASE_URI = f"mysql+pymysql://{os.getenv('admin')}:{os.getenv('admin_password')}@db/{os.getenv('todo_app')}"
